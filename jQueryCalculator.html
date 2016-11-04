@@ -131,8 +131,8 @@ $(document).ready(function(){
             var clickedNum = $(this).attr("value");
             $("#secondNumber").append(clickedNum); 
         } 
-        //if button clicked is an operation, does nothing if operation is already defined
-        else if ( $(this).hasClass("operator") && operation === undefined) {
+        /*if button clicked is an operation, does nothing if operation is already defined or if something in first number div*/
+        else if ( $(this).hasClass("operator") && operation === undefined && document.querySelector("#firstNumber").innerHTML !== "") {
             var clickedOperator = $(this).attr("value");
             console.log(clickedOperator);
             //plus minus times divide power
